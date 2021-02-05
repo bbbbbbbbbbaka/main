@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+      .mask{
+        position: absolute;
+        background-color: rgb(21, 173, 135);
+        background-color: rgba(0,0,0,0.2);
+        top: 0%;
+        left: 0%;
+        z-index: 998;
+      }
+      #popUp {
+        position: absolute;
+        left: 50%;
+        /* transform: translate(-50%,-50%); /* 向左移动自己的一半、向上移动自己的一半 */
+        transform: translate(-50%);
+        width: 400px;
+        height: 300px;
+        border: 1px solid #ccc;
+        margin: 0 auto;
+        margin-top: 50px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -o-border-radius: 10px;
+        z-index: 999;
+        overflow: hidden;
+        box-shadow: 0px 1px 8px;
+        background-color: #fff;
+      }
+      .header {
+        display: flex;
+        width: 100%;
+        height: 20px;
+        flex-wrap: wrap;
+      }
+      .son1 {
+        width: 94%;
+        height: 20px;
+        text-align: center;
+        background-color: rgb(243, 247, 9);
+      }
+      .son2 {
+        width: 6%;
+        height: 20px;
+        flex-grow: 1;
+        text-align: center;
+        background-color: rgb(243, 247, 9);
+      }
+      .son2:hover {
+        background-color: rgb(245, 229, 12);
+        cursor: pointer;
+      }
+      .btn {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mask">
+      <div id="popUp" style="display: none">
+        <div class="header">
+          <div class="son1">弹出框</div>
+          <div class="son2">X</div>
+        </div>
+      </div>
+    </div>
+    <input type="button" value="弹出框" class="btn" />
+    <script>
+      var son2 = document.querySelector(".son2");
+      var popUp = document.getElementById("popUp");
+      var btn = document.querySelector(".btn");
+      var mask = document.querySelector(".mask");
+      fn(son2);
+      fn(btn);
+      function fn(data) {
+        data.addEventListener("click", (e) => {
+          if (popUp.style.display == "block" ) {
+            popUp.style.display = "none";
+            mask.style.width = "";
+            mask.style.height = "";
+            console.log(son2.style.display);
+          } else {
+            popUp.style.display = "block";
+            mask.style.width = "100%";
+            mask.style.height = "100%";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

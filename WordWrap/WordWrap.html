@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 100%;
+        /* max-width: 1200px;
+        min-width: 300px; */
+        margin: 0 auto;
+      }
+      .main {
+        height: 600px;
+        background-color: #ccc;
+        box-sizing: border-box;
+        /*  overflow: hidden; */
+      }
+      .son1 {
+        display: inline-block;
+        height: 600px;
+        background-color: red;
+        width: 300px;
+      }
+      .son1 img {
+        height: 100%;
+        width: 100%;
+      }
+      .son2 {
+        /* box-sizing: border-box; */
+        float: left;
+        overflow: hidden;
+        /*  background-color: red; */
+        width: 270px;
+        height: 270px;
+        padding: 10px;
+        /* margin: 5px 0; */
+      }
+      .son2 img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+      <div class="son2"><img src="" alt="" /></div>
+    </div>
+    <script>
+      const data = {
+        img: new Array(20)
+          .fill(0)
+          .map(
+            (v) =>
+              "https://gw.alicdn.com/bao/uploaded/i3/4116366996/O1CN01t3hSAa21YDWNcI63Y_!!0-item_pic.jpg"
+          ),
+      };
+      const main = document.querySelector(".main");
+      const son2 = document.querySelector(".son2");
+      fn();
+      function fn() {
+        /*  main.children[0].children[0].src = data.img[0]; */
+        for (let i = 0; i < main.children.length; i++) {
+          main.children[i].children[0].src = data.img[1];
+         
+        }
+       /*  data.img.forEach(function(value,index,array){
+          console.log(index);
+          
+          main.children[index].children[0].src = data.img[0];
+        }) */
+
+        let f = () => {
+          /* console.log(123); */
+        };
+        f();
+        let o = {
+          f() {},
+        };
+        o.f();
+
+        o.f = () => {};
+        o.f();
+
+        window.addEventListener("resize", () => {
+          window.onresize();
+        });
+
+        window.onresize = function () {
+          let math = Math.floor(main.clientWidth / son2.clientWidth);
+          let math1 =
+            (main.clientWidth - son2.clientWidth * math) / math / 2 + "px";
+         /*  console.log(math, math1); */
+          for (let i = 0; i < main.children.length; i++) {
+            /* console.log(main.children.length);
+            console.log(son2); */
+            main.children[i].style.marginLeft = math1;
+            main.children[i].style.marginRight = math1;
+          }
+        };
+      }
+      window.onresize();
+      /* let average = main.clientWidth / math / math / 2 - 10; */
+      /* console.log(average); */
+    </script>
+  </body>
+</html>

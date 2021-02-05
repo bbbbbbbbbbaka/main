@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	
+    <style>
+		body{
+			background: -webkit-linear-gradient(
+				left, rgb(87, 223, 9),rgb(238, 7, 219)
+			)
+		}
+      .father1 {
+        width: 900px;
+        /* border: 1px solid #ccc	; */
+        font-size: 14px;
+        height: 200px;
+        box-sizing: border-box;
+        border-radius: 1%;
+        /* overflow: hidden; */
+        margin: 0 auto;
+      }
+      .son1 {
+        height: 30px;
+      /*   border-bottom: 1px solid #ccc; */
+        text-align: center;
+        line-height: 30px;
+        background-color: rgb(242, 247, 247);
+		border-radius: 1%;
+		border: 1px solid #ccc;
+		border-color:transparent;
+		box-sizing: border-box;
+		overflow: hidden;
+	  /*  background: -webkit-linear-gradient(
+				left, rgb(87, 223, 9),rgb(238, 7, 219)
+			) */
+      }
+      .son2 {
+        width: 100%;
+        height: 100%;
+        /* padding-top	: 10px; */
+        overflow: hidden;
+        /* background-color: rgb(21, 185, 84); */
+		background: -webkit-linear-gradient(
+				left, rgb(87, 223, 9),rgb(238, 7, 219)
+			)
+      }
+      .header1 {
+        color: black;
+      }
+      /* .son2:hover{
+			height: 0;
+			width: 0;
+			transition: all .5s ;
+		} */
+    </style>
+  </head>
+  <body>
+    <div class="father1">
+      <div class="son1">
+        <a href="#" class="header1">Collapsible Group Item #1</a>
+      </div>
+      <div class="son2">
+        <p>
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+          terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+          skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+          Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+          single-origin coffee nulla assumenda shoreditch et. Nihil anim
+        </p>
+      </div>
+      <div class="son1">
+        <a href="#" class="header1">Collapsible Group Item #2</a>
+      </div>
+      <div class="son2">
+        <p>
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+          terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+          skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+          Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+          single-origin coffee nulla assumenda shoreditch et. Nihil anim
+        </p>
+      </div>
+      <div class="son1">
+        <a href="#" class="header1">Collapsible Group Item #3</a>
+      </div>
+      <div class="son2">
+		<p>
+			Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+			terry richardson ad squid. 3 wolf moon officia aute, non cupidatat
+			skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+			Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+			single-origin coffee nulla assumenda shoreditch et. Nihil anim
+		  </p>
+	  </div>
+    </div>
+    <script>
+      var header1 = document.querySelectorAll(".header1");
+      var son1 = document.querySelectorAll(".son1");
+	  var son2 = document.querySelectorAll(".son2");
+	  var k = 0;
+	  for (let i = 0; i < son1.length; i++) {
+		  son2[i].setAttribute('boll','false')
+		son2[i].style.height = "0";
+	  }
+
+	/* var a;
+	var b=(a=1,c=2,d=3)
+
+	a=1;
+	2;
+	return 3 */
+      for (let i = 0; i < son1.length; i++) {		
+        header1[i].addEventListener("click", () => {
+			var get = son2[i].getAttribute('boll')
+			for(let i  =0;i<son1.length;i++){
+				son2[i].style.height = "0";
+				son2[i].style.transition = " all .5s";
+				son2[i].setAttribute('boll','false')
+			}
+			/* son2[i].style.height = "200px";
+			son2[i].style.transition = "all .5s "; */
+			if(get == 'false') {
+            son2[i].style.height = "200px";
+            son2[i].style.transition = "all .5s ";
+		/* 	console.log(son2[i].style.transition); */
+			son2[i].setAttribute('boll','true')
+			
+          }
+          /*  else if (get == 'true') {
+            son2[i].style.height = "0";
+            son2[i].style.transition = " all .5s";
+			son2[i].setAttribute('boll','false')
+			
+		  }  */
+			
+			/* if(k==1){
+				son2[i].style.height = "0";
+            son2[i].style.transition = " all .5s";
+			} */
+			
+		 /*   if(k == 1) {
+            son2[i].style.height = "200px";
+            son2[i].style.transition = "all .5s ";
+            console.log(son2[i].style.transition);
+			k--;
+			console.log(k);
+          }
+           else if (k == 0) {
+            son2[i].style.height = "0";
+            son2[i].style.transition = " all .5s";
+			k++;
+			console.log(k);
+		  }  */
+		  
+        }); 
+      }
+    </script>
+  </body>
+</html>
