@@ -7,7 +7,7 @@ class GridTable {
 		;(this.width = prams.width), (this.height = prams.height)
 
 		// 创建dom元素
-		;(this.right = this.myCreateElement('a', {class: 'right'}, ['→'])),
+		  (this.right = this.myCreateElement('a', {class: 'right'}, ['→'])),
 			(this.pan = this.myCreateElement('span', {class: 'pan'})),
 			(this.left = this.myCreateElement(
 				'a',
